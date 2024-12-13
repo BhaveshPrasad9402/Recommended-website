@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Prime Clone</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="TV_shows.html">TV Shows</a></li>
+                <li><a href="Movies.html">Movies</a></li>
+                <li><a href="Recommended.html" class="active">My List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h2>My Watchlist</h2>
+        <ul id="movie-list"></ul>
+
+        <h3>Add a Movie</h3>
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="director" placeholder="Director">
+        <button id="add-movie">Add</button>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Prime Clone. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fetch movies from the database
+        function fetchMovies() {
+            $.get("/movies", function(data) {
+                $("#movie-list").empty();
+                data.forEach(movie => {
+                    $("#movie-list").append(`
+                        <li>
+                            ${movie.title} - ${movie.director} 
+                            <button onclick="deleteMovie('${movie.title}')">Delete</button>
+                        </li>
+                    `);
+                });
+            });
+        }
+
+        // Add a new movie to the database
+        $("#add-movie").click(function() {
+            const title = $("#title").val();
+            const director = $("#director").val();
+            $.ajax({
+                url: "/movies",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ title, director }),
+                success: function() {
+                    fetchMovies();
+                }
+            });
+        });
+
+        // Delete a movie from the database
+        function deleteMovie(title) {
+            $.ajax({
+                url: `/movies/${title}`,
+                type: "DELETE",
+                success: function() {
+                    fetchMovies();
+                }
+            });
+        }
+
+        // Fetch movies when the page loads
+        $(document).ready(function() {
+            fetchMovies();
+        });
+    </script>
+</body>
+</html>

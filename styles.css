@@ -1,0 +1,322 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1f1f1f;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00a8e1;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar li {
+    margin: 0 1rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.navbar a:hover {
+    color: #00a8e1;
+}
+
+.profile-icon {
+    width: 40px;
+    border-radius: 50%;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://e0.pxfuel.com/wallpapers/724/281/desktop-wallpaper-get-amazon-prime-video-for-windows-amazon.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    background-color: #00a8e1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #008ab3;
+}
+
+/* Content Section */
+.content {
+    padding: 2rem;
+}
+
+.content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.movie-card {
+    text-align: center;
+}
+/* Most Watched Section */
+.video-section {
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+.video-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Flex Layout for Videos (All Cards Fit in One Line) */
+.video-grid {
+    display: flex; /* Flexbox to align items horizontally */
+    gap: 20px; /* Equal gap between video cards */
+    padding: 0 10px;
+    justify-content: center; /* Center the cards */
+    flex-wrap: nowrap; /* Prevent wrapping of cards to the next line */
+}
+
+/* Individual Video Card Style */
+.video-card {
+    text-align: center;
+    background-color: #202020;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    width: 500px; /* Adjusted to fit more cards in one row */
+    height: 300px; /* Set height to make cards consistent */
+    overflow: hidden;
+}
+
+.video-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.video-card video {
+    width: 100%;
+    height: 180px; /* Adjust the height of videos */
+    object-fit: cover; /* Ensures video fills the space inside the card */
+    border-radius: 10px;
+}
+
+.video-card h3 {
+    font-size: 14px;
+    margin: 10px 0;
+    color: white;
+}
+
+/* Optional: Add custom scrollbar styling */
+.video-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.video-grid::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.video-grid::-webkit-scrollbar-track {
+    background: #333;
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1f1f1f;
+    margin-top: 2rem;
+}
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1f1f1f;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00a8e1;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 5px 10px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #00a8e1;
+    border-bottom: 2px solid #00a8e1;
+}
+
+.profile-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* Content Section */
+.content {
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #00a8e1;
+    display: inline-block;
+}
+
+.content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.content li {
+    background-color: #1f1f1f;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.content li:hover {
+    background-color: #2b2b2b;
+}
+
+.content button {
+    background-color: #00a8e1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.content button:hover {
+    background-color: #007ba8;
+}
+
+/* Input Section */
+.content input {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 5px 0;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+}
+
+#add-movie {
+    margin-top: 10px;
+}
+
+/* Recommendations */
+.content h3 {
+    margin-top: 30px;
+    font-size: 24px;
+    color: #00a8e1;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1f1f1f;
+    position: relative;
+    bottom: 0;
+    color: #777;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
